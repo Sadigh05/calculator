@@ -2,8 +2,6 @@
 
 name: Our Action github
 
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
 on :
   push:
     branches:
@@ -11,21 +9,14 @@ on :
   pull_request:
     branches:
       - master
-  # Also trigger on page_build, as well as release created events
-  page_build:
-  release:
-    types: # This configuration does not affect the page_build event above
-      - test
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  test:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+  build:
+    runs-on: windows-latest
     steps:
-    # Runs a single command using the runners shell
-    - name: Run Testing
-      run: mvn test
+      - uses: actions/checkout@v2
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version : 1.8  
+      - name: Run Testing
+        run: mvn -b package --file pom.xml
