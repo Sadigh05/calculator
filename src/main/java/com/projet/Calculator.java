@@ -1,13 +1,5 @@
 package com.projet;
 
-import sun.management.snmp.jvmmib.JvmRTInputArgsEntryMeta;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import static jdk.nashorn.internal.objects.Global.Infinity;
-
 public class Calculator {
 
         public int sum(int a, int b) {
