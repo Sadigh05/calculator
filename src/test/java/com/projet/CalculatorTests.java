@@ -19,7 +19,7 @@ public class CalculatorTests {
         Assert.assertEquals(8,res1);
         
         int res1 = calculator.sum(2,6);
-        Assert.assertEquals(10,res2):
+        Assert.assertEquals(10,res2);
 
 
     }
