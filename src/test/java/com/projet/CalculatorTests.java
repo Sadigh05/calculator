@@ -18,7 +18,7 @@ public class CalculatorTests {
         int res1 = calculator.sum(2,6);
         Assert.assertEquals(8,res1);
         
-        int res1 = calculator.sum(2,6);
+        int res2 = calculator.sum(2,6);
         Assert.assertEquals(10,res2);
 
 
